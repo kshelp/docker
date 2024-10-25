@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysqlvol:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf  # 커스텀 설정 파일
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      LOWER_CASE_TABLE_NAMES: 1
+
+volumes:
+  mysqlvol:

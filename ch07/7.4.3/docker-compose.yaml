@@ -8,10 +8,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mysqlvol:/var/lib/mysql
+      - /nfs_shared/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       LOWER_CASE_TABLE_NAMES: 1
-
-volumes:
-  mysqlvol:

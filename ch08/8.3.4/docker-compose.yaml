@@ -1,0 +1,14 @@
+version: '3'
+services:
+  spring:
+    container_name: spring
+    image: localhost:8443/spring
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:oracle:thin:@192.168.45.104:1521:xe"
+      SPRING_DATASOURCE_USERNAME: "SCOTT"
+      SPRING_DATASOURCE_PASSWORD: "TIGER"
+    volumes:
+      - /nfs_shared/spring/upload:/opt/upload
+    restart: always

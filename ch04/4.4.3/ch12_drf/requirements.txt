@@ -1,0 +1,12 @@
+# 패키지 설치
+# sudo apt update
+# sudo apt install gcc-aarch64-linux-gnu
+# sudo apt install build-essential python3-dev
+# pip install -r requirements.txt
+Django>=4.2
+djangorestframework
+djangorestframework_simplejwt
+django-filter
+gunicorn
+pillow
+requests

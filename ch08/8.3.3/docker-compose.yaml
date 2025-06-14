@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  oracle-xe-11g:
+    image: kshelp/oracle-xe-11g    
+    container_name: oracle-xe-11g
+    ports:
+      - "1521:1521"  # Oracle listener port
+      - "9090:8080"  # Oracle Enterprise Manager Express
+    environment:
+      - ORACLE_ALLOW_REMOTE=true  # 원격 접속 허용
+      - ORACLE_PASSWORD=oracle  # 관리자 비밀번호      
+    restart: always
+    volumes:
+      - /nfs_shared/oracle:/u01/app/oracle  # 호스트 서버의 실제 경로를 컨테이너 내부로 마운트
+

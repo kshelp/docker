@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: django-app              # 이미지 이름 명시 (원하는 이름으로)
+    container_name: django-app     # 컨테이너 이름 명시
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
